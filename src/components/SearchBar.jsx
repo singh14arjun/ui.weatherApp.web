@@ -1,13 +1,12 @@
-// SearchBar.js
 import React, { useState } from "react";
 import "./weather.css";
 
 const SearchBar = ({ onSearch }) => {
-  const [inputValue, setInputValue] = useState("");
+  const [cityName, setCityName] = useState("");
 
   const handleClick = () => {
-    if (inputValue.trim()) {
-      onSearch(inputValue);
+    if (cityName.trim()) {
+      onSearch(cityName);
     }
   };
 
@@ -16,8 +15,9 @@ const SearchBar = ({ onSearch }) => {
       <input
         type="text"
         placeholder="Search City"
-        value={inputValue}
-        onChange={(e) => setInputValue(e.target.value)}
+        name="ciytName"
+        value={cityName}
+        onChange={(e) => setCityName(e.target.value)}
       />
       <button onClick={handleClick}>
         <i className="fa-solid fa-magnifying-glass"></i>

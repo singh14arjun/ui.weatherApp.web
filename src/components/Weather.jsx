@@ -2,6 +2,8 @@
 import React, { useState } from "react";
 import SearchBar from "./SearchBar";
 import "./weather.css";
+import WeatherInfo from "./WeatheInfo";
+import { data } from "jquery";
 
 const WeatherApp = () => {
   const [weatherData, setWeatherData] = useState(null);
@@ -26,6 +28,10 @@ const WeatherApp = () => {
   return (
     <div className="weather">
       <SearchBar onSearch={fetchWeather} />
+
+      <h1>Weather</h1>
+      <WeatherInfo weatherInfo={weatherData} />
+      {/* <WeatherInfo /> */}
     </div>
   );
 };

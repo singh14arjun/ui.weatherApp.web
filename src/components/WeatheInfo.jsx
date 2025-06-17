@@ -6,7 +6,11 @@ const WeatherInfo = ({ weatherInfo }) => {
 
   const toTime = (timestamp) => {
     const date = new Date(timestamp * 1000);
-    return date.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" });
+    return date.toLocaleTimeString([], {
+      hour: "2-digit",
+      minute: "2-digit",
+      hour12: false,
+    });
   };
 
   const days = [
@@ -84,8 +88,7 @@ const WeatherInfo = ({ weatherInfo }) => {
             <i className="fa-solid fa-sun"></i> Sunrise
           </p>
           <h3 className="text-xl md:text-2xl">
-            {toTime(weatherInfo.sys.sunrise)}{" "}
-            <span className="text-sm">AM</span>
+            {toTime(weatherInfo.sys.sunrise)} <span className="text-sm"></span>
           </h3>
         </div>
 
@@ -94,7 +97,7 @@ const WeatherInfo = ({ weatherInfo }) => {
             <i className="fa-solid fa-moon"></i> Sunset
           </p>
           <h3 className="text-xl md:text-2xl">
-            {toTime(weatherInfo.sys.sunset)} <span className="text-sm">PM</span>
+            {toTime(weatherInfo.sys.sunset)} <span className="text-sm"></span>
           </h3>
         </div>
       </div>

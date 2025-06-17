@@ -23,7 +23,7 @@ const SearchBar = ({ onSearch }) => {
         onClick={handleClick}
         className="bg-transparent border-none cursor-pointer"
       >
-        <i className="fa-solid fa-magnifying-glass bg-[antiquewhite] p-3 rounded-full text-black hover:bg-[#baa9c4]"></i>
+        <i className="fa-solid fa-magnifying-glass bg-[antiquewhite] p-3 rounded-full text-black hover:bg-[#baa9c4] sm:text-lg w-full"></i>
       </button>
     </div>
   );
